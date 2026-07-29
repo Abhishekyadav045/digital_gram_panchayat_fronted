@@ -1,0 +1,87 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4fff6;
+}
+
+.contact-section{
+    padding:70px 0;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.heading h1{
+    color:#198754;
+    font-size:42px;
+    font-weight:bold;
+}
+
+.heading p{
+    color:#666;
+    max-width:750px;
+    margin:auto;
+    font-size:18px;
+}
+
+.contact-card,
+.info-card{
+
+    background:#fff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.form-control{
+
+    border-radius:10px;
+    padding:12px;
+
+}
+
+textarea{
+
+    resize:none;
+
+}
+
+.btn-success{
+
+    border-radius:30px;
+    padding:12px 35px;
+    font-weight:bold;
+
+}
+
+.btn-success:hover{
+
+    background:#146c43;
+
+}
+
+.info-card h3{
+
+    color:#198754;
+    margin-bottom:25px;
+
+}
+
+.info-card p{
+
+    color:#555;
+    font-size:17px;
+    line-height:1.8;
+
+}
+
+.info-card i{
+
+    color:#198754;
+    margin-right:10px;
+    font-size:20px;
+
+}
