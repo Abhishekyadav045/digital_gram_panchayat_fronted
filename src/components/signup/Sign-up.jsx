@@ -5,14 +5,12 @@ import toast, { Toaster } from "react-hot-toast";
 import "./signup.css";
 import logo from "../../assets/gallery/logo.png";
 
-
-
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-
-console.log("BASE_URL =", BASE_URL);
 
 export const Signup = () => {
   const navigate = useNavigate();
+
+  console.log("BASE_URL =", BASE_URL);
 
   const [state, setState] = useState({
     name: "",
@@ -30,7 +28,6 @@ export const Signup = () => {
     setState({ ...state, [name]: value });
   };
 
-  
   const saveForm = async (e) => {
     e.preventDefault();
 
@@ -40,8 +37,11 @@ export const Signup = () => {
     }
 
     try {
-      // console.log(state);
+      console.log("Sending Data:", state);
+
       const res = await axios.post(`${BASE_URL}/api/sign-up`, state);
+
+      console.log("Response:", res.data);
 
       if (res.data.success) {
         toast.success(res.data.message);
@@ -54,25 +54,21 @@ export const Signup = () => {
           aadhar: "",
           password: "",
           confirmpassword: "",
+          role: "citizen",
         });
 
         setTimeout(() => {
           navigate("/login");
         }, 1500);
       }
+    } catch (err) {
+      console.log("Status:", err.response?.status);
+      console.log("Data:", err.response?.data);
+      console.error(err);
+
+      toast.error(err.response?.data?.message || "Something went wrong");
     }
-  //   } catch (err) {
-  //     toast.error(err.response?.data?.message || "Something went wrong");
-  //     console.error(err);
-  //   }
-  // };
-
-  catch (err) {
-  console.log("Status:", err.response?.status);
-  console.log("Data:", err.response?.data);
-
-  toast.error(err.response?.data?.message || "Something went wrong");
-}
+  };
 
   return (
     <div className="container-fluid signup-page">
@@ -83,7 +79,6 @@ export const Signup = () => {
           <div className="card signup-card">
             <div className="row g-0">
               {/* Left Section */}
-
               <div className="col-md-5 signup-left">
                 <img src={logo} alt="DGPP Logo" />
 
@@ -96,7 +91,6 @@ export const Signup = () => {
               </div>
 
               {/* Right Section */}
-
               <div className="col-md-7 signup-right">
                 <h2>Citizen Registration</h2>
 
@@ -111,7 +105,6 @@ export const Signup = () => {
                       onChange={handler}
                     >
                       <option value="citizen">Citizen</option>
-
                       <option value="admin">Panchayat Admin</option>
                     </select>
                   </div>
@@ -156,6 +149,7 @@ export const Signup = () => {
                       required
                     />
                   </div>
+
                   <div className="mb-3">
                     <label className="form-label">Village Name</label>
 
