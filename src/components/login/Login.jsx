@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import "./login.css";
+import logo from "../../assets/gallery/logo.png";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
@@ -67,7 +68,7 @@ export const Login = () => {
                 {/* Left Side */}
 
                 <div className="col-md-5 login-left">
-                  <img src="../src/assets/gallery/logo.png" alt="DGPP Logo" />
+                  <img src={logo} alt="DGPP Logo" />
 
                   <h2>Digital Gram Panchayat</h2>
 

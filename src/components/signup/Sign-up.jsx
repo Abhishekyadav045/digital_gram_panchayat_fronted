@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import "./signup.css";
+import logo from "../../assets/gallery/logo.png";
+
+
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
@@ -27,6 +30,7 @@ export const Signup = () => {
     setState({ ...state, [name]: value });
   };
 
+  
   const saveForm = async (e) => {
     e.preventDefault();
 
@@ -56,11 +60,19 @@ export const Signup = () => {
           navigate("/login");
         }, 1500);
       }
-    } catch (err) {
-      toast.error(err.response?.data?.message || "Something went wrong");
-      console.error(err);
     }
-  };
+  //   } catch (err) {
+  //     toast.error(err.response?.data?.message || "Something went wrong");
+  //     console.error(err);
+  //   }
+  // };
+
+  catch (err) {
+  console.log("Status:", err.response?.status);
+  console.log("Data:", err.response?.data);
+
+  toast.error(err.response?.data?.message || "Something went wrong");
+}
 
   return (
     <div className="container-fluid signup-page">
@@ -73,7 +85,7 @@ export const Signup = () => {
               {/* Left Section */}
 
               <div className="col-md-5 signup-left">
-                <img src="../src/assets/gallery/logo.png" alt="DGPP Logo" />
+                <img src={logo} alt="DGPP Logo" />
 
                 <h2>Digital Gram Panchayat</h2>
 
