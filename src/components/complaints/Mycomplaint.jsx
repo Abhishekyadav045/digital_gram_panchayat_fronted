@@ -52,13 +52,20 @@ export const MyComplaint = () => {
               <td>{item.complaindetails}</td>
 
               <td>
-                {item.image && (
+                {item.image ? (
                   <img
-                    src={`http://localhost:5000/uploads/${item.image}`}
+                    src={`${BASE_URL}/uploads/${item.image}`}
                     alt="Complaint"
+                    className="img-fluid rounded"
                     width="250"
                     height="200"
+                    style={{ objectFit: "cover", borderRadius: "8px" }}
+                    onError={(e) => {
+                      console.log("Image URL:", e.target.src);
+                    }}
                   />
+                ) : (
+                  "No Image"
                 )}
               </td>
 
