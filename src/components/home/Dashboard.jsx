@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./dashboard.css";
+import img1 from "../../assets/gallery/img1.jpeg";
+import img2 from "../../assets/gallery/img2.jpg";
+import img3 from "../../assets/gallery/img3.jpeg";
 
 const services = [
   { title: "Birth Certificate", icon: "📝", path: "/certificate" },
@@ -77,21 +80,9 @@ export const Dashboard = () => {
                 <div className="carousel-inner">
                   <div className="carousel-item active" data-bs-interval="3000">
                     <img
-                      src="../src/assets/gallery/img1.jpeg"
-                      className="d-block w-100 rounded"
+                      src={img1}
                       alt="Digital Gram Panchayat"
-                      style={{
-                        height: "400px",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-
-                  <div className="carousel-item" data-bs-interval="3000">
-                    <img
-                      src="../src/assets/gallery/img2.jpg"
                       className="d-block w-100 rounded"
-                      alt="Village Development"
                       style={{
                         height: "400px",
                         objectFit: "cover",
@@ -101,7 +92,19 @@ export const Dashboard = () => {
 
                   <div className="carousel-item" data-bs-interval="3000">
                     <img
-                      src="../src/assets/gallery/img1.jpeg"
+                      src={img2}
+                      alt="Village Development"
+                      className="d-block w-100 rounded"
+                      style={{
+                        height: "400px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+
+                  <div className="carousel-item" data-bs-interval="3000">
+                    <img
+                      src={img3}
                       className="d-block w-100 rounded"
                       alt="Government Services"
                       style={{
