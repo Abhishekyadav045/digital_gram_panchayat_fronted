@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/gallery/logo.png";
+import logo from "../src/assets/gallery/logo.png";
 
 export const Header = () => {
   const navigate = useNavigate();
