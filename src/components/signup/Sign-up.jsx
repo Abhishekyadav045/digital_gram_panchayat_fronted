@@ -6,6 +6,8 @@ import "./signup.css";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
+console.log("BASE_URL =", BASE_URL);
+
 export const Signup = () => {
   const navigate = useNavigate();
 
